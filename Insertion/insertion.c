@@ -7,18 +7,18 @@ int *funcInsertData(int data[], int *size, int pos, int new_data);
 
 int main()
 {
-    int arr[MAX_SIZE], size, pos, value;
+    int size = MAX_SIZE, pos, value;
 
-    int *data = calloc(size, sizeof(int));
+    int *data = calloc(MAX_SIZE, sizeof(int));
 
-    for(int i = 0; i < MAX_SIZE; i++) arr[i] = i * (i + 1);
+    for(int i = 0; i < MAX_SIZE; i++) data[i] = i * (i + 1);
 
     printf("Enter position to be modified: ");
     scanf("%d", &pos);
     printf("Enter value to be inserted: ");
     scanf("%d", &value);
 
-    data = funcInsertData(arr, &size, pos, value);
+    data = funcInsertData(data, &size, pos, value);
 
     for (int j = 0; j < size; j++) printf("%d ", data[j]);
 
